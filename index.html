@@ -256,7 +256,7 @@ legend{padding:0;margin-bottom:7px}
     <h2>How it works</h2>
     <ol class="steps">
       <li><span class="n" aria-hidden="true">1</span><h3>Send us your photos</h3><p>Up to eight, plus the name, colors and date. You approve a proof before anything prints.</p></li>
-      <li><span class="n" aria-hidden="true">2</span><h3>Set the post once, no digging</h3><p>It slides over a stake in your lawn in a few minutes.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Set the post once</h3><p>It slides over a stake in your lawn and stays there between occasions.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Swap the sleeve for the next occasion</h3><p>Same post, new sleeve. Sleeves store flat until next time.</p></li>
     </ol>
   </div>
@@ -347,6 +347,14 @@ legend{padding:0;margin-bottom:7px}
           <option>Something else</option>
         </select>
       </div>
+      <div class="field full"><label for="f-stand">Where would it stand?</label>
+        <select id="f-stand" name="stand">
+          <option>Front lawn</option>
+          <option>Driveway, porch or patio</option>
+          <option>Indoors</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
       <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <div class="field full">
         <button class="btn btn-gold" type="submit">Join the list</button>
@@ -420,7 +428,7 @@ legend{padding:0;margin-bottom:7px}
     body.append(SIGNUP.email, (data.get('email') || '').trim());
     body.append(SIGNUP.phone, (data.get('phone') || '').trim());
     body.append(SIGNUP.city, (data.get('city') || '').trim());
-    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '.');
+    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '. Would stand: ' + (data.get('stand') || '') + '.');
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true; say('Sending...', false);
     fetch(SIGNUP.action, { method: 'POST', mode: 'no-cors', body: body })
