@@ -316,12 +316,12 @@ legend{padding:0;margin-bottom:7px}
 <section class="ways" id="ways">
   <div class="wrap ways-grid">
     <div class="ways-head">
-      <h2>Two ways to get one</h2>
+      <h2>What you get</h2>
       <p>People on the list hear pricing and ordering dates first.</p>
     </div>
     <div class="rows">
-      <div class="row"><h3>Own it</h3><p>Post, cap, stake and your first custom sleeve, shipped to your door. Order a new sleeve whenever the next occasion comes up.</p></div>
-      <div class="row"><h3>Rent it for a week</h3><p>Custom sleeve included, and the sleeve is yours to keep. Offered where we have local pickup.</p></div>
+      <div class="row"><h3>The kit</h3><p>Post, cap, stake and your first custom sleeve, shipped to your door.</p></div>
+      <div class="row"><h3>New sleeves</h3><p>Order a new sleeve whenever the next occasion comes up. Same post, new look.</p></div>
     </div>
   </div>
 </section>
@@ -347,14 +347,6 @@ legend{padding:0;margin-bottom:7px}
           <option>Something else</option>
         </select>
       </div>
-      <fieldset class="field full">
-        <legend>Own or rent?</legend>
-        <div class="choice">
-          <label><input id="f-plan-own" type="radio" name="plan" value="Own">Own it</label>
-          <label><input id="f-plan-rent" type="radio" name="plan" value="Rent">Rent it</label>
-          <label><input id="f-plan-unsure" type="radio" name="plan" value="Not sure" checked>Not sure yet</label>
-        </div>
-      </fieldset>
       <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <div class="field full">
         <button class="btn btn-gold" type="submit">Join the list</button>
@@ -428,7 +420,7 @@ legend{padding:0;margin-bottom:7px}
     body.append(SIGNUP.email, (data.get('email') || '').trim());
     body.append(SIGNUP.phone, (data.get('phone') || '').trim());
     body.append(SIGNUP.city, (data.get('city') || '').trim());
-    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '. Own or rent: ' + (data.get('plan') || '') + '.');
+    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '.');
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true; say('Sending...', false);
     fetch(SIGNUP.action, { method: 'POST', mode: 'no-cors', body: body })
