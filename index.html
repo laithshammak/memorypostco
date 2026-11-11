@@ -132,12 +132,13 @@ section[id]{scroll-margin-top:72px}
 .make-stage::before{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:var(--lawn);background:linear-gradient(180deg,var(--lawn) 0,var(--lawn-deep) 100%);background:linear-gradient(180deg,#37804A 0,#2A6F43 100%)}
 .make-stage canvas{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
 .make-stage canvas:active{cursor:grabbing}
-.make-turn{position:absolute;z-index:2;left:0;right:0;bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px;color:#fff;font:600 13px/1 var(--text);letter-spacing:.03em;pointer-events:none}
+.make-turn{position:absolute;z-index:2;left:0;right:0;bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:none}
 .make-turn button{pointer-events:auto;flex:none;width:40px;height:40px;padding:0;border:2px solid rgba(255,255,255,.9);background:rgba(20,33,61,.42);color:#fff;font:700 19px/1 var(--text);cursor:pointer}
 .make-turn button:hover{background:var(--ink)}
 .make-turn .mk-zoom{width:auto;padding:0 12px;font:700 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
 .make-turn .mk-zoom[hidden]{display:none}
-.make-stage.turned .mk-hint{display:none}
+.mk-hint{position:absolute;z-index:2;left:0;right:0;top:14px;text-align:center;color:var(--ink);font:600 13px/1 var(--text);letter-spacing:.03em;pointer-events:none;transition:opacity .3s}
+.make-stage.turned .mk-hint{opacity:0}
 .make-controls{grid-area:controls;display:flex;flex-direction:column;gap:24px;max-width:34em;min-width:0}
 .mk-group{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:10px}
 .mk-label,.mk-f label,.mk-more summary{font:700 15px/1.1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:0}
@@ -376,9 +377,9 @@ legend{padding:0;margin-bottom:7px}
     </div>
     <div class="make-stage" id="make-stage">
       <canvas id="make-canvas" role="img" aria-label="A preview of your Memory Post. It changes as you change the options."></canvas>
+      <span class="mk-hint" aria-hidden="true">Drag to turn</span>
       <div class="make-turn">
         <button type="button" id="mk-left" aria-label="Turn the post to the left">&#8592;</button>
-        <span class="mk-hint">Drag to turn</span>
         <button type="button" class="mk-zoom" id="mk-zoom" aria-pressed="false" hidden>Zoom</button>
         <button type="button" id="mk-right" aria-label="Turn the post to the right">&#8594;</button>
       </div>
@@ -555,6 +556,6 @@ legend{padding:0;margin-bottom:7px}
   });
 })();
 </script>
-<script type="module" src="customizer.js"></script>
+<script type="module" src="customizer.js?v=2"></script>
 </body>
 </html>
