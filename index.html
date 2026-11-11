@@ -122,6 +122,53 @@ section[id]{scroll-margin-top:72px}
 .stage img{position:absolute;z-index:1;left:50%;bottom:52px;height:var(--sp-h);width:auto;max-width:none;opacity:0;transform:translate(-50%,-38px);transition:transform .5s cubic-bezier(.2,.75,.25,1),opacity .26s ease}
 .stage img.on{opacity:1;transform:translate(-50%,0)}
 
+/* try it with your name */
+.swap.has-make .swap-grid{display:none}
+.make{display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-areas:"head stage" "controls stage";grid-template-rows:auto 1fr;column-gap:72px;row-gap:28px}
+.make[hidden]{display:none}
+.make-head{grid-area:head;display:flex;flex-direction:column;gap:18px}
+.make-head p{max-width:30em;font-size:18px}
+.make-stage{grid-area:stage;position:sticky;top:84px;align-self:start;height:min(860px,calc(100vh - 108px));min-height:520px;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,var(--sky) 0%,#EEF3F9 70%);border:1px solid var(--rule);--lawn:90px}
+.make-stage::before{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:var(--lawn);background:linear-gradient(180deg,var(--lawn) 0,var(--lawn-deep) 100%);background:linear-gradient(180deg,#37804A 0,#2A6F43 100%)}
+.make-stage canvas{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+.make-stage canvas:active{cursor:grabbing}
+.make-turn{position:absolute;z-index:2;left:0;right:0;bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px;color:#fff;font:600 13px/1 var(--text);letter-spacing:.03em;pointer-events:none}
+.make-turn button{pointer-events:auto;flex:none;width:40px;height:40px;padding:0;border:2px solid rgba(255,255,255,.9);background:rgba(20,33,61,.42);color:#fff;font:700 19px/1 var(--text);cursor:pointer}
+.make-turn button:hover{background:var(--ink)}
+.make-turn .mk-zoom{width:auto;padding:0 12px;font:700 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+.make-turn .mk-zoom[hidden]{display:none}
+.make-stage.turned .mk-hint{display:none}
+.make-controls{grid-area:controls;display:flex;flex-direction:column;gap:24px;max-width:34em;min-width:0}
+.mk-group{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.mk-label,.mk-f label,.mk-more summary{font:700 15px/1.1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:0}
+.mk-occ{display:flex;flex-wrap:wrap;gap:10px}
+.mk-occ .tab[aria-pressed="true"]{background:var(--ink);color:#fff}
+.mk-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mk-f{display:flex;flex-direction:column;gap:8px;min-width:0}
+.mk-f[hidden]{display:none}
+.make .mk-f input{width:100%;height:auto;min-height:50px;padding:0 14px;border:2px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);font:500 18px/1.2 var(--text);-webkit-appearance:none;appearance:none}
+.make .mk-f input::placeholder{color:#8792A6;opacity:1}
+.make input:focus-visible{outline-color:var(--ink)}
+.mk-sw{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;max-width:392px}
+.swc{position:relative;display:block;cursor:pointer}
+.swc input{position:absolute;left:0;top:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.swc span{display:block;height:0;padding-bottom:100%;border:1px solid rgba(20,33,61,.32);box-sizing:content-box}
+.swc input:checked+span{outline:3px solid var(--ink);outline-offset:2px}
+.swc input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.swc b{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mk-photos{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.mk-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.btn-line{min-height:50px;padding:0 20px;background:#fff;color:var(--ink);font-size:17px}
+.mk-photos:focus-within .btn-line{outline:3px solid var(--ink);outline-offset:3px}
+.mk-check{display:inline-flex;align-items:center;gap:9px;font-size:16px;color:var(--ink);cursor:pointer}
+.mk-check input{width:20px;height:20px;margin:0;accent-color:#14213D}
+.mk-clear{background:none;border:0;padding:0;color:var(--ink);font:600 16px/1.2 var(--text);text-decoration:underline;cursor:pointer}
+.mk-clear[hidden]{display:none}
+.mk-note{font-size:14.5px;line-height:1.5;color:var(--muted)}
+.mk-more summary{cursor:pointer;padding:4px 0}
+.mk-more[open] summary{margin-bottom:16px}
+.mk-cta{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-top:24px;border-top:1px solid var(--rule)}
+
 /* own or rent */
 .ways{padding:92px 0}
 .ways-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 64px;align-items:start}
@@ -174,6 +221,17 @@ legend{padding:0;margin-bottom:7px}
 .foot a:not(.brand):hover{text-decoration-color:var(--gold)}
 
 @media (max-width:900px){
+  .make{grid-template-columns:minmax(104px,31%) minmax(0,1fr);grid-template-areas:"head head" "stage controls";column-gap:16px;row-gap:22px}
+  .make-stage{top:60px;height:calc(100vh - 72px);height:calc(100dvh - 72px);min-height:420px}
+  .make-turn{gap:6px;bottom:8px}
+  .make-turn button{width:36px;height:36px}
+  .mk-hint{display:none}
+  .mk-row{grid-template-columns:minmax(0,1fr)}
+  .mk-sw{grid-template-columns:repeat(4,minmax(0,1fr));max-width:216px}
+  .mk-occ .tab{flex:1 1 100%;min-height:46px;padding:0 12px;font-size:17px}
+  .btn-line{width:100%;padding:0 10px;font-size:16px}
+  .make-controls{gap:22px}
+  .mk-cta .btn{width:100%;padding:0 12px}
   .hero{--lawn-h:124px;--post-h:500px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
   .hero-copy{max-width:none;padding:44px 0 0}
@@ -227,7 +285,7 @@ legend{padding:0;margin-bottom:7px}
       <p class="lede">A six-foot yard post wrapped in your photos, your graduate's name and the class year. Keep the post and swap the printed sleeve for the next birthday, senior night or holiday.</p>
       <div class="cta-row">
         <a class="btn" href="#join">Join the list</a>
-        <a class="text-link" href="#how">See how it works</a>
+        <a class="text-link" href="#designs">Try it with your name</a>
       </div>
     </div>
     <figure class="yard">
@@ -308,6 +366,65 @@ legend{padding:0;margin-bottom:7px}
           <li>Printed in team colors</li>
         </ul>
         <p class="swatches"><span class="sw" style="background:#6B1F2A"></span><span class="sw" style="background:#111111"></span><span class="sw" style="background:#C9CDD3"></span>Sample colors. Yours match your team.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap make" id="make" hidden>
+    <div class="make-head">
+      <h2>Try it with<br>your name.</h2>
+      <p>Pick the occasion, type a name, choose your colors and add your photos. The post changes as you go.</p>
+    </div>
+    <div class="make-stage" id="make-stage">
+      <canvas id="make-canvas" role="img" aria-label="A preview of your Memory Post. It changes as you change the options."></canvas>
+      <div class="make-turn">
+        <button type="button" id="mk-left" aria-label="Turn the post to the left">&#8592;</button>
+        <span class="mk-hint">Drag to turn</span>
+        <button type="button" class="mk-zoom" id="mk-zoom" aria-pressed="false" hidden>Zoom</button>
+        <button type="button" id="mk-right" aria-label="Turn the post to the right">&#8594;</button>
+      </div>
+    </div>
+    <div class="make-controls">
+      <div class="mk-group" role="group" aria-labelledby="mk-occ-label">
+        <span class="mk-label" id="mk-occ-label">Occasion</span>
+        <div class="mk-occ">
+          <button class="tab" type="button" data-occ="graduation" aria-pressed="true">Graduation</button>
+          <button class="tab" type="button" data-occ="birthday" aria-pressed="false">Birthday</button>
+          <button class="tab" type="button" data-occ="senior-night" aria-pressed="false">Senior night</button>
+        </div>
+      </div>
+      <div class="mk-row">
+        <div class="mk-f"><label for="mk-name">Name</label><input id="mk-name" type="text" maxlength="16" autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="Maya"></div>
+        <div class="mk-f" data-for="graduation"><label for="mk-year">Class year</label><input id="mk-year" type="text" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="2027"></div>
+        <div class="mk-f" data-for="birthday" hidden><label for="mk-age">Turning</label><input id="mk-age" type="text" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="10"></div>
+        <div class="mk-f" data-for="senior-night" hidden><label for="mk-number">Jersey number</label><input id="mk-number" type="text" inputmode="numeric" maxlength="2" autocomplete="off" placeholder="12"></div>
+      </div>
+      <fieldset class="mk-group"><legend class="mk-label">Main color</legend><div class="mk-sw" id="mk-main"></div></fieldset>
+      <fieldset class="mk-group"><legend class="mk-label">Second color</legend><div class="mk-sw" id="mk-accent"></div></fieldset>
+      <div class="mk-group">
+        <span class="mk-label">Photos</span>
+        <div class="mk-photos">
+          <label class="btn btn-line" for="mk-photos">Add up to 5 photos</label>
+          <input class="mk-file" id="mk-photos" type="file" accept="image/*" multiple>
+          <label class="mk-check"><input id="mk-bw" type="checkbox" checked> Black and white</label>
+          <button type="button" class="mk-clear" id="mk-clear" hidden>Remove my photos</button>
+        </div>
+        <p class="mk-note" id="mk-photo-note" role="status" aria-live="polite">Sample photos are showing. Yours stay on your device.</p>
+      </div>
+      <details class="mk-more">
+        <summary>More details</summary>
+        <div class="mk-row">
+          <div class="mk-f" data-for="graduation"><label for="mk-school">School</label><input id="mk-school" type="text" maxlength="26" autocomplete="off" placeholder="Northside High"></div>
+          <div class="mk-f" data-for="senior-night" hidden><label for="mk-sport">Sport</label><input id="mk-sport" type="text" maxlength="22" autocomplete="off" placeholder="Varsity soccer"></div>
+          <div class="mk-f" data-for="senior-night" hidden><label for="mk-team">Team</label><input id="mk-team" type="text" maxlength="22" autocomplete="off" placeholder="Northside Hawks"></div>
+          <div class="mk-f" data-for="senior-night" hidden><label for="mk-year2">Class year</label><input id="mk-year2" type="text" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="2027"></div>
+          <div class="mk-f" data-for="graduation birthday"><label for="mk-l1">Party, line 1</label><input id="mk-l1" type="text" maxlength="16" autocomplete="off" placeholder="Open house"></div>
+          <div class="mk-f" data-for="graduation birthday"><label for="mk-l2">Party, line 2</label><input id="mk-l2" type="text" maxlength="16" autocomplete="off" placeholder="Sat June 12"></div>
+          <div class="mk-f" data-for="graduation birthday"><label for="mk-l3">Party, line 3</label><input id="mk-l3" type="text" maxlength="16" autocomplete="off" placeholder="2 to 6 pm"></div>
+        </div>
+      </details>
+      <div class="mk-cta">
+        <a class="btn" href="#join" id="mk-join">Join the list</a>
+        <p class="mk-note">This is a preview, not an order. Names and photos you try here stay on your device. If you join the list, we note only the occasion and colors you tried.</p>
       </div>
     </div>
   </div>
@@ -428,7 +545,7 @@ legend{padding:0;margin-bottom:7px}
     body.append(SIGNUP.email, (data.get('email') || '').trim());
     body.append(SIGNUP.phone, (data.get('phone') || '').trim());
     body.append(SIGNUP.city, (data.get('city') || '').trim());
-    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '. Would stand: ' + (data.get('stand') || '') + '.');
+    body.append(SIGNUP.note, 'Occasion: ' + (data.get('occasion') || '') + '. Would stand: ' + (data.get('stand') || '') + '.' + (window.MP_DESIGN ? ' ' + window.MP_DESIGN : ''));
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true; say('Sending...', false);
     fetch(SIGNUP.action, { method: 'POST', mode: 'no-cors', body: body })
@@ -438,5 +555,6 @@ legend{padding:0;margin-bottom:7px}
   });
 })();
 </script>
+<script type="module" src="customizer.js"></script>
 </body>
 </html>
