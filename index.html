@@ -54,7 +54,7 @@ section[id]{scroll-margin-top:72px}
 /* top bar */
 .top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
 .top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.brand{font:700 22px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.brand{display:inline-block;padding:6px 0;font:700 22px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;background:var(--ink);color:#fff;border:2px solid var(--ink);font:700 19px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
 .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 .btn-sm{min-height:40px;padding:0 18px;font-size:16px}
@@ -133,7 +133,7 @@ section[id]{scroll-margin-top:72px}
 .make-stage canvas{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
 .make-stage canvas:active{cursor:grabbing}
 .make-turn{position:absolute;z-index:2;left:0;right:0;bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:none}
-.make-turn button{pointer-events:auto;flex:none;width:40px;height:40px;padding:0;border:2px solid rgba(255,255,255,.9);background:rgba(20,33,61,.42);color:#fff;font:700 19px/1 var(--text);cursor:pointer}
+.make-turn button{pointer-events:auto;flex:none;width:40px;height:40px;padding:0;border:2px solid rgba(255,255,255,.9);background:rgba(20,33,61,.62);color:#fff;font:700 19px/1 var(--text);cursor:pointer}
 .make-turn button:hover{background:var(--ink)}
 .make-turn .mk-zoom{width:auto;padding:0 12px;font:700 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
 .make-turn .mk-zoom[hidden]{display:none}
@@ -148,7 +148,7 @@ section[id]{scroll-margin-top:72px}
 .mk-f{display:flex;flex-direction:column;gap:8px;min-width:0}
 .mk-f[hidden]{display:none}
 .make .mk-f input{width:100%;height:auto;min-height:50px;padding:0 14px;border:2px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);font:500 18px/1.2 var(--text);-webkit-appearance:none;appearance:none}
-.make .mk-f input::placeholder{color:#8792A6;opacity:1}
+.make .mk-f input::placeholder{color:#6B7689;opacity:1}
 .make input:focus-visible{outline-color:var(--ink)}
 .mk-sw{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;max-width:392px}
 .swc{position:relative;display:block;cursor:pointer}
@@ -194,7 +194,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 label,legend{font-weight:600;font-size:15px;line-height:1.3;color:#fff}
 label span,legend span{font-weight:400;color:#AEB9CC}
 input[type="text"],input[type="email"],input[type="tel"],select{width:100%;height:52px;padding:0 14px;background:#fff;color:var(--ink);border:2px solid #fff;border-radius:0;font:400 17px/1 var(--text);appearance:none;-webkit-appearance:none}
-input::placeholder{color:#8A94A6}
+input::placeholder{color:#6B7689}
 select{padding-right:40px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%2314213D' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 fieldset{border:0;margin:0;padding:0;min-width:0}
@@ -208,6 +208,7 @@ legend{padding:0;margin-bottom:7px}
 .btn-gold{background:var(--gold);border-color:var(--gold);color:var(--ink);align-self:flex-start;min-width:240px}
 .btn-gold:hover{background:#fff;border-color:#fff}
 .fine{font-size:14.5px;line-height:1.5;color:#AEB9CC}
+.fine a{color:#fff;text-underline-offset:3px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #form-status{font-weight:600;color:#fff;min-height:1.55em}
 #form-status.warn{color:var(--gold)}
@@ -218,7 +219,7 @@ legend{padding:0;margin-bottom:7px}
 .foot .brand{color:#fff;font-size:20px}
 .foot-left{display:flex;flex-direction:column;gap:10px;max-width:34em}
 .foot-links{display:flex;gap:22px;align-items:flex-start}
-.foot a:not(.brand){color:#fff;font-weight:600;text-underline-offset:4px}
+.foot a:not(.brand){display:inline-block;padding:6px 0;color:#fff;font-weight:600;text-underline-offset:4px}
 .foot a:not(.brand):hover{text-decoration-color:var(--gold)}
 
 @media (max-width:900px){
@@ -304,8 +305,8 @@ legend{padding:0;margin-bottom:7px}
 <section class="facts" aria-label="At a glance">
   <div class="wrap facts-grid">
     <div class="fact"><div class="fact-n">6<small>ft</small></div><p>tall with the cap on</p></div>
-    <div class="fact"><div class="fact-n">4</div><p>sides, printed all the way around</p></div>
-    <div class="fact"><div class="fact-n">8</div><p>photos on a graduation sleeve</p></div>
+    <div class="fact"><div class="fact-n">4</div><p>sides, each one printed</p></div>
+    <div class="fact"><div class="fact-n">5</div><p>photos on every sleeve</p></div>
     <div class="fact"><div class="fact-n">2</div><p>sleeve sections that store flat</p></div>
   </div>
 </section>
@@ -314,8 +315,8 @@ legend{padding:0;margin-bottom:7px}
   <div class="wrap">
     <h2>How it works</h2>
     <ol class="steps">
-      <li><span class="n" aria-hidden="true">1</span><h3>Send us your photos</h3><p>Up to eight, plus the name, colors and date. You approve a proof before anything prints.</p></li>
-      <li><span class="n" aria-hidden="true">2</span><h3>Set the post once</h3><p>It slides over a stake in your lawn and stays there between occasions.</p></li>
+      <li><span class="n" aria-hidden="true">1</span><h3>Send us your photos</h3><p>Up to five, plus the name, colors and date. You approve a proof before anything prints.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Set the post once</h3><p>It slides over a steel stake you drive into your lawn, and lifts off when the occasion is over.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Swap the sleeve for the next occasion</h3><p>Same post, new sleeve. Sleeves store flat until next time.</p></li>
     </ol>
   </div>
@@ -342,17 +343,17 @@ legend{padding:0;margin-bottom:7px}
         <h3>For the graduate</h3>
         <ul>
           <li>Their name down the front, with the class year under it</li>
-          <li>Up to eight photos, from freshman year to now</li>
-          <li>The school name and where they are headed next</li>
+          <li>Five photos, from freshman year to now</li>
+          <li>The school name and your own hashtag</li>
           <li>Open house day and time, so the post is also the invitation</li>
         </ul>
-        <p class="swatches"><span class="sw" style="background:#14213D"></span><span class="sw" style="background:#F2A900"></span>Sample colors. Yours match your school.</p>
+        <p class="swatches"><span class="sw" style="background:#14213D"></span><span class="sw" style="background:#F2A900"></span>Sample colors. Pick the pair closest to your school's.</p>
       </div>
       <div class="panel" role="tabpanel" id="panel-birthday" data-k="birthday" aria-labelledby="tab-birthday" hidden>
         <h3>For the birthday</h3>
         <ul>
           <li>Their name and the big number</li>
-          <li>Six photos through the years</li>
+          <li>Five photos through the years</li>
           <li>Party day and time</li>
           <li>Colors you pick</li>
         </ul>
@@ -363,10 +364,10 @@ legend{padding:0;margin-bottom:7px}
         <ul>
           <li>Their name and jersey number</li>
           <li>Team, sport and position</li>
-          <li>Six photos across the seasons</li>
-          <li>Printed in team colors</li>
+          <li>Five photos across the seasons</li>
+          <li>Two colors you pick, close to your team's</li>
         </ul>
-        <p class="swatches"><span class="sw" style="background:#6B1F2A"></span><span class="sw" style="background:#111111"></span><span class="sw" style="background:#C9CDD3"></span>Sample colors. Yours match your team.</p>
+        <p class="swatches"><span class="sw" style="background:#6B1F2A"></span><span class="sw" style="background:#111111"></span><span class="sw" style="background:#C9CDD3"></span>Sample colors. Pick the pair closest to your team's.</p>
       </div>
     </div>
   </div>
@@ -477,7 +478,7 @@ legend{padding:0;margin-bottom:7px}
       <div class="field full">
         <button class="btn btn-gold" type="submit">Join the list</button>
         <p id="form-status" role="status" aria-live="polite"></p>
-        <p class="fine">We use your details only to contact you about Memory Post.</p>
+        <p class="fine">We use your details only to contact you about Memory Post. No marketing texts. <a href="privacy.html">Privacy notice</a>.</p>
       </div>
     </form>
   </div>
@@ -490,9 +491,11 @@ legend{padding:0;margin-bottom:7px}
       <a class="brand" href="#top">Memory Post</a>
       <p>Based in Michigan. Shipping planned across the U.S.</p>
       <p>Concept preview. Not for sale yet. Names, dates and photos shown are samples.</p>
+      <p>Towns and HOAs set their own rules for yard displays. Check yours before you order.</p>
       <p>&copy; 2026 Memory Post</p>
     </div>
     <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
       <a href="https://www.instagram.com/memorypostco/" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@memorypostco" rel="noopener">TikTok</a>
     </div>
