@@ -595,6 +595,7 @@ legend{padding:0;margin-bottom:7px}
       <button type="button" data-add="star">Star</button>
       <button type="button" data-add="heart">Heart</button>
       <button type="button" id="fx-clear">Clear all</button>
+      <select id="fx-from" aria-label="Start this panel again from a ready-made design"><option value="">Start from</option></select>
     </div>
     <div class="fx-row" id="fx-sel" hidden>
       <button type="button" id="fx-more">+ Add</button>
@@ -611,7 +612,7 @@ legend{padding:0;margin-bottom:7px}
       <input id="fx-text" type="text" maxlength="60" autocomplete="off" aria-label="Words on the selected text">
       <select id="fx-font" aria-label="Lettering style"></select>
     </div>
-    <div class="fx-row" id="fx-tip"><span class="fx-tiptext" id="fx-tiptext">Tap a piece to change it. Minus and plus show more or less of the panel.</span></div>
+    <div class="fx-row" id="fx-tip"><span class="fx-tiptext" id="fx-tiptext">Tap a piece to change it. Slide the Add row for more. Minus and plus zoom the panel.</span></div>
   </div>
   <div class="fx-scroll" id="fx-scroll" tabindex="0" role="region" aria-label="The panel you are designing"><div class="fx-wrap" id="fx-wrap"><canvas id="fx-canvas"></canvas></div></div>
   <div class="fx-zoom"><button type="button" id="fx-out" aria-label="Show more of the panel">&minus;</button><button type="button" id="fx-in" aria-label="Show the panel larger">+</button></div>
@@ -675,6 +676,6 @@ legend{padding:0;margin-bottom:7px}
 })();
 </script>
 <script>window.MP_HOLD=['sign'];</script>
-<script type="module" src="customizer.js?v=9"></script>
+<script type="module" src="customizer.js?v=10"></script>
 </body>
 </html>
