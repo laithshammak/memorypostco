@@ -19,7 +19,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314213D'/%3E%3Crect x='11' y='4' width='10' height='24' fill='%23fff'/%3E%3Crect x='11' y='13' width='10' height='5' fill='%23F2A900'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=Caveat:wght@600&family=Permanent+Marker&family=Reenie+Beanie&family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=Caveat:wght@600&family=Permanent+Marker&family=Reenie+Beanie&family=Covered+By+Your+Grace&family=Graduate&family=Bebas+Neue&family=Anton&family=Alfa+Slab+One&family=DM+Serif+Display&family=Playfair+Display:wght@700&family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Layout: square corners and ruled lines like the post itself, left-aligned copy,
@@ -154,40 +154,7 @@ section[id]{scroll-margin-top:72px}
 .mk-group[hidden]{display:none}
 .mk-free{display:flex;flex-wrap:wrap;gap:10px}
 .btn[hidden]{display:none}
-html.fx-open{overflow:hidden}
-.fx{position:fixed;left:0;top:0;width:100%;height:100vh;height:100dvh;z-index:80;display:flex;flex-direction:column;background:#EEF2F8;color:var(--ink)}
-.fx[hidden]{display:none}
-.fx-bar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 14px;background:var(--ink);color:#fff}
-.fx-title{font:700 16px/1.1 var(--display);letter-spacing:.14em;text-transform:uppercase;text-align:center}
-.fx-bar button{flex:none;min-height:44px;padding:0 16px;border:2px solid #fff;border-radius:0;background:transparent;color:#fff;font:700 16px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.fx-bar #fx-done{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.fx-bar button:disabled{opacity:.4;cursor:default}
-.fx-tools{flex:none;display:flex;flex-direction:column;gap:8px;padding:8px 14px;background:#fff;border-bottom:1px solid var(--rule)}
-.fx-row{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.fx-row::-webkit-scrollbar{display:none}
-.fx-row[hidden]{display:none}
-.fx-lab{flex:none;width:86px;font:700 13px/1.15 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.fx-row button,.fx-row .fx-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:2px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);font:700 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.fx-row .fx-sw{min-height:0;width:34px;height:34px;padding:0;border:1px solid rgba(20,33,61,.4)}
-.fx-row input[type="text"]{flex:1 1 150px;min-width:130px;min-height:44px;padding:0 12px;border:2px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);font:500 17px/1.2 var(--text);-webkit-appearance:none;appearance:none}
-.fx-row select{flex:none;min-height:44px;padding:0 36px 0 12px;border:2px solid var(--ink);border-radius:0;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%2314213D' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 12px center/14px 9px;color:var(--ink);font:500 17px/1.2 var(--text);-webkit-appearance:none;appearance:none}
-.fx-row :focus-visible{outline:3px solid var(--gold);outline-offset:1px}
-.fx-scroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:16px 0 72px}
-.fx-wrap{width:max-content;margin:0 auto;background:#fff;box-shadow:0 0 0 1px rgba(20,33,61,.25),0 8px 28px rgba(20,33,61,.14)}
-.fx-hint{flex:none;margin:0;padding:8px 14px;background:#EEF2F8;font-size:14px;line-height:1.4;color:var(--muted);text-align:center}
-.fx-row{height:48px;min-height:48px}
-.fx-row button,.fx-row .fx-btn,.fx-row input[type="text"],.fx-row select{box-sizing:border-box;height:44px;min-height:0}
-.fx-row .fx-sw{height:34px}
-.fx-row input[type="text"]{width:auto}
-.fx-row select{width:auto;max-width:170px}
-@media (max-width:520px){.fx-lab{width:auto;margin-right:2px}.fx-row button,.fx-row .fx-btn{padding:0 11px;font-size:14px;letter-spacing:.07em}.fx-bar button{padding:0 14px}}
-.fx-tiptext{font-size:14.5px;line-height:1.3;color:var(--muted)}
 .make button,.make label,.make select{touch-action:manipulation}
-.fx,.fx *{touch-action:pan-x pan-y}
-.fx canvas{touch-action:pan-x pan-y !important}
-.fx-zoom{position:absolute;right:12px;bottom:16px;display:flex;gap:8px;z-index:2}
-.fx-zoom button{width:48px;height:48px;padding:0;border:2px solid #fff;border-radius:0;background:var(--ink);color:#fff;font:700 26px/1 var(--display);cursor:pointer;box-shadow:0 2px 10px rgba(20,33,61,.3)}
-.fx-zoom button:disabled{opacity:.4;cursor:default}
 .make input:focus-visible{outline-color:var(--ink)}
 .mk-sw{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;max-width:392px}
 .swc{position:relative;display:block;cursor:pointer}
@@ -305,6 +272,172 @@ legend{padding:0;margin-bottom:7px}
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none !important}
 }
+/* ---- design studio: a work table for one face, the four faces unrolled beside it, the post standing at the right ---- */
+.st-open{overflow:hidden}
+.st{--line:#CBD3DF;--soft:#F4F6FA;--bench:#E3E8F0;--mute:#4A5670;position:fixed;left:0;top:0;width:100%;height:100vh;height:100dvh;z-index:90;display:flex;flex-direction:column;background:#fff;color:var(--ink);font:500 15px/1.35 var(--text)}
+.st[hidden]{display:none}
+.st *{box-sizing:border-box}
+.st :where(button){font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.st label,.st label span{font-weight:inherit;color:inherit}
+.st :focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.st,.st *{touch-action:pan-x pan-y}
+.st-top{flex:none;display:flex;align-items:center;gap:10px;height:56px;padding:0 14px;background:var(--ink);color:#fff}
+.st-title{margin:0 auto 0 6px;font:700 21px/1 var(--display);letter-spacing:.01em}
+.st-b{flex:none;display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 12px;border:1px solid var(--line);border-radius:3px;background:#fff;white-space:nowrap}
+.st-b>span{display:inline-flex;align-items:center}
+.st-b:hover{background:var(--soft)}
+.st-b[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.st-top .st-b{border-color:rgba(255,255,255,.34);background:transparent;color:#fff}
+.st-top .st-b:hover{background:rgba(255,255,255,.12)}
+.st-top .st-b:disabled{opacity:.36;cursor:default}
+.st-top .st-go{padding:0 22px;border-color:var(--gold);background:var(--gold);color:var(--ink);font-weight:600}
+.st-top .st-go:hover{background:#FFB91A}
+.st-facepick{display:none;align-items:center;gap:4px;font-weight:600}
+.st-facepick .st-b{width:34px;height:34px;padding:0;justify-content:center;border-color:transparent}
+.st-main{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:86px 316px minmax(0,1fr) 304px}
+.st-rail{display:flex;flex-direction:column;gap:3px;padding:10px 7px;background:var(--soft);border-right:1px solid var(--line)}
+.st-tab{display:flex;flex-direction:column;align-items:center;gap:5px;padding:11px 2px 9px;border:0;border-radius:3px;background:transparent;font-size:12.5px;line-height:1.1;color:var(--mute)}
+.st-tab:hover{background:#E9EDF4}
+.st-tab[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:inset 3px 0 0 var(--gold),0 1px 3px rgba(20,33,61,.1)}
+.st-tab-post{display:none}
+.st-panel{min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 16px 28px;background:#fff;border-right:1px solid var(--line)}
+.st-phead{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:15px 0 9px;background:#fff}
+.st-phead strong{font:700 23px/1 var(--display)}
+.st-pclose{display:none;width:38px;padding:0;justify-content:center}
+.st-sec{padding:12px 0 16px;border-top:1px solid #E7EBF1}
+.st-phead+.st-sec{border-top:0;padding-top:2px}
+.st-sec h3{margin:0 0 10px;font:600 14px/1.2 var(--text);color:var(--mute);letter-spacing:0;text-transform:none}
+.st-fine{margin:10px 0 0;font-size:13.5px;line-height:1.4;color:var(--mute)}
+.st-lab{margin:12px 0 6px;font-size:13.5px;color:var(--mute)}
+.st-seg{display:flex;border:1px solid var(--ink);border-radius:3px;overflow:hidden}
+.st-seg button{flex:1;height:38px;padding:0 4px;border:0;border-left:1px solid var(--ink);background:#fff;font-size:14px}
+.st-seg button:first-child{border-left:0}
+.st-seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+.st-two{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;margin-top:12px}
+.st-two label{display:block;margin:0;font:500 13.5px/1.3 var(--text);color:var(--mute)}
+.st-two input,.st-words{display:block;width:100%;height:40px;margin-top:4px;padding:0 10px;border:1px solid #8E99AD;border-radius:3px;background:#fff;color:var(--ink);font:500 16px/1.2 var(--text);-webkit-appearance:none;appearance:none}
+.st-sw{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.st-chip{width:28px;height:28px;padding:0;border:1px solid rgba(20,33,61,.3);border-radius:50%}
+.st-chip.on{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--ink)}
+.st-any{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 4px 0 10px;border:1px solid var(--line);border-radius:15px;font-size:13.5px;cursor:pointer}
+.st-any input{width:26px;height:22px;padding:0;border:0;background:none;cursor:pointer}
+.st-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.st-card{display:flex;flex-direction:column;gap:6px;padding:0;border:0;background:none;font-size:13px;line-height:1.2;text-align:left}
+.st-card canvas{display:block;width:100%;height:auto;outline:1px solid rgba(20,33,61,.28)}
+.st-card:hover canvas{outline:2px solid var(--ink)}
+.st-card.on canvas{outline:3px solid var(--gold)}
+.st-adds{display:grid;gap:8px}
+.st-add{height:52px;padding:0 14px;border:1px solid var(--line);border-radius:3px;background:var(--soft);font-size:22px;line-height:1;text-align:left;overflow:hidden;white-space:nowrap}
+.st-add:hover,.st-font:hover{border-color:var(--ink)}
+.st-fonts{display:grid;gap:6px}
+.st-font{display:flex;align-items:center;justify-content:space-between;gap:10px;height:50px;padding:0 12px;border:1px solid var(--line);border-radius:3px;background:#fff;overflow:hidden}
+.st-font span{font-size:25px;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-font small{flex:none;font-size:12.5px;color:var(--mute)}
+.st-font.on{border-color:var(--ink);box-shadow:inset 3px 0 0 var(--gold)}
+.st-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.st .st-upload{color:#fff}
+.st-upload{display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border:1px solid var(--ink);border-radius:3px;background:var(--ink);color:#fff;font-weight:600;cursor:pointer}
+.st-file:focus-visible+.st-fine,.st-upload:focus-within{outline:3px solid var(--gold)}
+.st-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.st-photo{position:relative;padding:0;border:0;background:none}
+.st-photo canvas{display:block;width:100%;height:auto;outline:1px solid rgba(20,33,61,.2)}
+.st-photo:hover canvas{outline:2px solid var(--ink)}
+.st-photo small{position:absolute;left:4px;bottom:4px;padding:1px 5px;background:rgba(255,255,255,.88);font-size:11px;color:var(--ink)}
+.st-arts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.st-art{aspect-ratio:1;padding:9px;border:1px solid var(--line);border-radius:3px;background:var(--soft)}
+.st-art svg{display:block;width:100%;height:100%;fill:var(--ink)}
+.st-art:hover{border-color:var(--ink);background:#fff}
+.st-pats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.st-pat{display:flex;flex-direction:column;gap:5px;padding:0;border:0;background:none;font-size:12px}
+.st-pat canvas{display:block;width:100%;height:auto;aspect-ratio:1;outline:1px solid rgba(20,33,61,.25)}
+.st-pat.on canvas{outline:3px solid var(--gold)}
+.st-work{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bench)}
+.st-ctxwrap{flex:none;background:#fff;border-bottom:1px solid var(--line)}
+.st-ctx{display:flex;align-items:center;gap:8px;height:56px;padding:0 12px;overflow-x:auto;scrollbar-width:none}
+.st-ctx::-webkit-scrollbar{display:none}
+.st-ctx .st-words{flex:1 1 170px;min-width:120px;max-width:300px;margin:0;height:38px}
+.st-ctx .st-b{padding:0 10px}
+.st-gap{flex:1 1 4px;min-width:4px}
+.st-tip{font-size:14px;color:var(--mute);white-space:nowrap}
+.st-size{flex:none;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:3px}
+.st-size .st-b{width:36px;padding:0;justify-content:center;border:0}
+.st-size output{min-width:52px;text-align:center;font-size:14px;font-variant-numeric:tabular-nums}
+.st-colorbtn i{width:20px;height:20px;border:1px solid rgba(20,33,61,.35);border-radius:50%}
+.st-fontbtn{max-width:150px;overflow:hidden}
+.st-del:hover{background:#FCE8E8;border-color:#B42318;color:#B42318}
+.st-more{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;padding:2px 12px 10px}
+.st-more:empty{display:none}
+.st-slide{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--mute)}
+.st-slide input{width:190px;accent-color:var(--ink)}
+.st-slide output{min-width:48px;color:var(--ink);font-variant-numeric:tabular-nums}
+.st-stage{position:relative;flex:1;min-height:0;display:flex}
+.st-ruler{flex:none;width:38px;height:100%;background:#EDF0F5;border-right:1px solid var(--line)}
+.st-cv{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none;background:var(--bench)}
+.st-cv .canvas-container{position:absolute !important;left:0;top:0}
+.st .st-cv,.st .st-cv canvas,.st .st-strip canvas,.st .st-post canvas{touch-action:none}
+.st-nav{flex:none;display:flex;align-items:flex-start;gap:9px;padding:16px 12px 0;background:#EDF0F5;border-left:1px solid var(--line)}
+.st-strip{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;padding:0;border:0;background:transparent}
+.st-strip canvas{display:block;outline:1px solid rgba(20,33,61,.35);cursor:pointer;touch-action:none}
+.st-strip.on canvas{outline:2px solid var(--ink);cursor:ns-resize}
+.st-strip b{font:600 12.5px/1 var(--text);color:var(--mute)}
+.st-strip.on b{color:var(--ink)}
+.st-win{display:none;position:absolute;left:-4px;right:-4px;top:0;border:2px solid var(--gold);background:rgba(242,169,0,.14);pointer-events:none}
+.st-strip.on .st-win{display:block}
+.st-zoom{position:absolute;left:50px;bottom:14px;z-index:2;display:flex;border:1px solid var(--line);border-radius:3px;background:#fff;box-shadow:0 2px 8px rgba(20,33,61,.14)}
+.st-zoom button{width:42px;height:40px;padding:0;border:0;background:transparent;font-size:21px;line-height:1}
+.st-zoom button:disabled{opacity:.35;cursor:default}
+.st-zoom #st-zfit{width:auto;padding:0 13px;border-left:1px solid var(--line);border-right:1px solid var(--line);font-size:14px}
+.st-side{display:flex;flex-direction:column;min-height:0;background:#fff;border-left:1px solid var(--line)}
+.st-post{position:relative;flex:1;min-height:0}
+.st-post .make-stage{position:absolute;left:0;top:0;width:100%;height:100%;min-height:0;border:0}
+.st-sidecap{flex:none;margin:0;padding:10px 14px 12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--mute)}
+@media (max-width:1179px){
+  .st-main{grid-template-columns:78px 286px minmax(0,1fr)}
+  .st-tab-post{display:flex}
+  .st-side{display:none;position:absolute;right:0;top:0;bottom:0;z-index:3;width:min(320px,100%);box-shadow:-8px 0 24px rgba(20,33,61,.18)}
+  .st[data-post] .st-side{display:flex}
+}
+@media (max-width:759px){
+  .st-top{height:50px;padding:0 8px;gap:6px}
+  .st-title{display:none}
+  .st-facepick{display:flex;margin-right:auto}
+  .st-top #st-close span,.st-top #st-undo span,.st-top #st-redo span{display:none}
+  .st-top #st-close,.st-top #st-undo,.st-top #st-redo{width:40px;padding:0;justify-content:center}
+  .st-top .st-go{padding:0 16px}
+  .st-main{display:flex;flex-direction:column}
+  .st-work{order:1;flex:1}
+  .st-stage{order:1}
+  .st-ctxwrap{order:2;border-bottom:0;border-top:1px solid var(--line)}
+  .st-ctx{height:52px;padding:0 8px;gap:6px}
+  .st-ctxwrap{position:relative}
+  .st-ctxwrap::after{content:"";position:absolute;right:0;top:0;width:22px;height:52px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none}
+  .st-more{padding:2px 8px 8px}
+  .st-slide input{width:150px}
+  .st-panel{order:2;display:none;flex:none;max-height:44vh;padding:0 12px 18px;border-right:0;border-top:1px solid var(--line)}
+  .st[data-tab]:not([data-tab=""]) .st-panel{display:block}
+  .st-pclose{display:inline-flex}
+  .st-phead{padding:10px 0 6px}
+  .st-rail{order:3;flex:none;flex-direction:row;gap:0;padding:4px 2px calc(4px + env(safe-area-inset-bottom,0px));border-right:0;border-top:1px solid var(--line)}
+  .st-tab{flex:1;gap:3px;padding:6px 0 4px;font-size:11px}
+  .st-tab[aria-pressed=true]{box-shadow:inset 0 3px 0 var(--gold)}
+  .st-side{position:static;order:1;flex:1;width:auto;box-shadow:none}
+  .st[data-post] .st-work{display:none}
+  .st-ruler{width:26px}
+  .st-nav{padding:10px 7px 0;gap:0}
+  .st-zoom{left:34px;bottom:10px}
+  .st-zoom button{width:44px;height:44px}
+  .st-cards{grid-template-columns:repeat(4,1fr)}
+  .st-arts{grid-template-columns:repeat(6,1fr)}
+  .st-pats{grid-template-columns:repeat(5,1fr)}
+  .st-photos{grid-template-columns:repeat(4,1fr)}
+  .st-b{height:40px}
+}
+@media (prefers-reduced-motion:no-preference){.st-tab,.st-b,.st-chip{transition:background-color .12s,box-shadow .12s}}
+.mk-studio{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 6px}
+.mk-studio[hidden]{display:none}
+.mk-studio span{flex:1 1 200px;font-size:15px;line-height:1.4;color:var(--muted)}
+.btn.btn-studio{min-height:50px;padding:0 24px;background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.btn-studio:hover{background:#FFB91A;border-color:#FFB91A}
 </style>
 </head>
 <body id="top">
@@ -413,7 +546,8 @@ legend{padding:0;margin-bottom:7px}
   <div class="wrap make" id="make" hidden>
     <div class="make-head">
       <h2>Try it with<br>your name.</h2>
-      <p>Pick the occasion, type a name, choose your colors, add your photos and pick what goes on each face. The post changes as you go.</p>
+      <p>Pick the occasion, type a name and choose your colors. The post changes as you go. Then open the design studio to make every face your own.</p>
+      <div class="mk-studio" id="mk-studio-row" hidden><button type="button" class="btn btn-studio" id="mk-studio">Open the design studio</button><span>Move anything on a face. Add your own words, photos and artwork.</span></div>
     </div>
     <div class="make-stage" id="make-stage">
       <canvas id="make-canvas" role="img" aria-label="A preview of your Memory Post. It changes as you change the options."></canvas>
@@ -460,7 +594,7 @@ legend{padding:0;margin-bottom:7px}
           <div class="mk-f"><label for="mk-face4">Face 4</label><select id="mk-face4"></select></div>
         </div>
         <p class="mk-note">Pick what is printed on each face. The post turns to show the one you change.</p>
-        <div class="mk-free"><button type="button" class="btn btn-line" id="mk-design" hidden>Design a face yourself</button></div>
+        <div class="mk-free"><button type="button" class="btn" id="mk-design" hidden>Open the design studio</button></div>
       </fieldset>
       <div class="mk-group" data-face="message" hidden>
         <span class="mk-label">Family message</span>
@@ -486,7 +620,7 @@ legend{padding:0;margin-bottom:7px}
       <div class="mk-group" data-face="free" hidden>
         <span class="mk-label">Design it yourself</span>
         <div class="mk-free" id="mk-free"></div>
-        <p class="mk-note">Each face is two printed panels, top and bottom. Open one to move, change or remove anything on it and to add your own words, photos and shapes.</p>
+        <p class="mk-note">Open a face in the studio to move, change or remove anything on it and to add your own words, photos and artwork.</p>
       </div>
       <details class="mk-more">
         <summary>More details</summary>
@@ -578,44 +712,30 @@ legend{padding:0;margin-bottom:7px}
   </div>
 </footer>
 
-<div class="fx" id="fx" hidden role="dialog" aria-modal="true" aria-labelledby="fx-title">
-  <div class="fx-bar">
-    <button type="button" id="fx-undo" disabled>Undo</button>
-    <span class="fx-title" id="fx-title">Design this panel</span>
-    <button type="button" id="fx-done">Done</button>
+<div class="st" id="st" hidden role="dialog" aria-modal="true" aria-label="Design studio">
+  <div class="st-top">
+    <button type="button" class="st-b" id="st-close" aria-label="Back to the page"></button>
+    <div class="st-title">Design studio</div>
+    <div class="st-facepick"><button type="button" class="st-b" id="st-prev" aria-label="Previous face"></button><span id="st-facename">Face 1 of 4</span><button type="button" class="st-b" id="st-next" aria-label="Next face"></button></div>
+    <button type="button" class="st-b" id="st-undo" aria-label="Undo" disabled></button>
+    <button type="button" class="st-b" id="st-redo" aria-label="Redo" disabled></button>
+    <button type="button" class="st-b st-go" id="st-done">Done</button>
   </div>
-  <div class="fx-tools">
-    <div class="fx-row" id="fx-add">
-      <span class="fx-lab">Add</span>
-      <button type="button" data-add="text">Text</button>
-      <label class="fx-btn" for="fx-photo">Photo</label>
-      <input class="mk-file" id="fx-photo" type="file" accept="image/*">
-      <button type="button" data-add="rect">Box</button>
-      <button type="button" data-add="circle">Circle</button>
-      <button type="button" data-add="star">Star</button>
-      <button type="button" data-add="heart">Heart</button>
-      <button type="button" id="fx-clear">Clear all</button>
-      <select id="fx-from" aria-label="Start this panel again from a ready-made design"><option value="">Start from</option></select>
+  <div class="st-main">
+    <div class="st-rail" id="st-rail"></div>
+    <div class="st-panel" id="st-panel"></div>
+    <div class="st-work">
+      <div class="st-ctxwrap"><div class="st-ctx" id="st-ctx"></div><div class="st-more" id="st-more"></div></div>
+      <div class="st-stage" id="st-stage">
+        <canvas class="st-ruler" id="st-ruler" aria-hidden="true"></canvas>
+        <div class="st-cv" id="st-cv"><canvas id="st-canvas"></canvas></div>
+        <div class="st-nav" id="st-nav"></div>
+        <div class="st-zoom"><button type="button" id="st-zout" aria-label="Zoom out">&minus;</button><button type="button" id="st-zfit">Whole face</button><button type="button" id="st-zin" aria-label="Zoom in">+</button></div>
+      </div>
     </div>
-    <div class="fx-row" id="fx-sel" hidden>
-      <button type="button" id="fx-more">+ Add</button>
-      <button type="button" id="fx-front">Front</button>
-      <button type="button" id="fx-back">Back</button>
-      <button type="button" id="fx-dup">Copy</button>
-      <button type="button" id="fx-del">Delete</button>
-    </div>
-    <div class="fx-row" id="fx-colors-row">
-      <span class="fx-lab" id="fx-colorlabel">Background</span>
-      <span id="fx-colors" style="display:contents"></span>
-    </div>
-    <div class="fx-row" id="fx-textrow" hidden>
-      <input id="fx-text" type="text" maxlength="60" autocomplete="off" aria-label="Words on the selected text">
-      <select id="fx-font" aria-label="Lettering style"></select>
-    </div>
-    <div class="fx-row" id="fx-tip"><span class="fx-tiptext" id="fx-tiptext">Tap a piece to change it. Slide the Add row for more. Minus and plus zoom the panel.</span></div>
+    <div class="st-side" id="st-side"><div class="st-post" id="st-post"></div><p class="st-sidecap">Your post, as it changes. Drag it to turn it.</p></div>
   </div>
-  <div class="fx-scroll" id="fx-scroll" tabindex="0" role="region" aria-label="The panel you are designing"><div class="fx-wrap" id="fx-wrap"><canvas id="fx-canvas"></canvas></div></div>
-  <div class="fx-zoom"><button type="button" id="fx-out" aria-label="Show more of the panel">&minus;</button><button type="button" id="fx-in" aria-label="Show the panel larger">+</button></div>
+</div>
 </div>
 
 <script>
@@ -676,6 +796,6 @@ legend{padding:0;margin-bottom:7px}
 })();
 </script>
 <script>window.MP_HOLD=['sign'];</script>
-<script type="module" src="customizer.js?v=10"></script>
+<script type="module" src="customizer.js?v=11"></script>
 </body>
 </html>
