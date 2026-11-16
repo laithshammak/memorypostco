@@ -137,6 +137,35 @@ section[id]{scroll-margin-top:72px}
 .make-turn button:hover{background:var(--ink)}
 .make-turn .mk-zoom{width:auto;padding:0 12px;font:700 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
 .make-turn .mk-zoom[hidden]{display:none}
+.make-stage:not(.roomy) #mk-pic{display:none}
+.mk-cta-row{display:flex;flex-wrap:wrap;gap:12px;align-self:stretch}
+.mk-cta-row .btn[hidden]{display:none}
+.mk-cta-row .btn-line{min-height:54px;font-size:19px;padding:0 26px}
+.pic{width:min(940px,calc(100vw - 28px));max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px);padding:0;border:2px solid var(--ink);background:#fff;color:var(--body);overflow:auto}
+.pic::backdrop{background:rgba(20,33,61,.66)}
+.pic-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 12px 12px 22px;border-bottom:1px solid var(--rule)}
+.pic-head h2{font-size:34px;line-height:1}
+.pic-x{flex:none;width:44px;height:44px;padding:0;border:2px solid var(--ink);background:#fff;color:var(--ink);font:400 30px/1 var(--text);cursor:pointer}
+.pic-x:hover{background:var(--ink);color:#fff}
+.pic-body{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px;padding:22px}
+.pic-view{display:flex;align-items:center;justify-content:center;min-height:300px;background:var(--mist);border:1px solid var(--rule)}
+.pic-view img{width:auto;height:auto;max-width:100%;max-height:min(72vh,780px)}
+.pic-view img[hidden],.pic-wait[hidden],.pic-side .btn[hidden]{display:none}
+.pic-wait{margin:0;padding:24px;font:600 17px/1.4 var(--text);color:var(--ink);text-align:center}
+.pic-side{display:flex;flex-direction:column;align-items:stretch;gap:14px}
+.pic-shapes{display:flex}
+.pic-shape{flex:1;min-height:46px;padding:4px 10px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:600 15px/1.2 var(--text);cursor:pointer}
+.pic-shape+.pic-shape{border-left:0}
+.pic-shape[aria-pressed="true"]{background:var(--ink);color:#fff}
+.pic-side .btn{width:100%;padding:0 12px}
+.pic-side .mk-note:empty{display:none}
+@media (max-width:760px){
+  .pic-body{grid-template-columns:1fr;gap:14px;padding:14px}
+  .pic-head{padding-left:14px}
+  .pic-head h2{font-size:28px}
+  .pic-view{min-height:200px}
+  .pic-view img{max-height:50vh;max-height:50dvh}
+}
 .mk-hint{position:absolute;z-index:2;left:0;right:0;top:14px;text-align:center;color:var(--ink);font:600 13px/1 var(--text);letter-spacing:.03em;pointer-events:none;transition:opacity .3s}
 .make-stage.turned .mk-hint{opacity:0}
 .make-controls{grid-area:controls;display:flex;flex-direction:column;gap:24px;max-width:34em;min-width:0}
@@ -247,6 +276,7 @@ legend{padding:0;margin-bottom:7px}
   .btn-line{width:100%;padding:0 10px;font-size:16px}
   .make-controls{gap:22px}
   .mk-cta .btn{width:100%;padding:0 12px}
+  .mk-cta-row .btn-line{padding:0 12px}
   .hero{--lawn-h:124px;--post-h:500px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
   .hero-copy{max-width:none;padding:44px 0 0}
@@ -568,6 +598,7 @@ legend{padding:0;margin-bottom:7px}
         <button type="button" id="mk-left" aria-label="Turn the post to the left">&#8592;</button>
         <button type="button" class="mk-zoom" id="mk-zoom" aria-pressed="false" hidden>Zoom</button>
         <button type="button" id="mk-right" aria-label="Turn the post to the right">&#8594;</button>
+        <button type="button" class="mk-zoom" id="mk-pic" aria-label="Share or save a picture of your post" hidden>Share</button>
       </div>
     </div>
     <div class="make-controls">
@@ -648,7 +679,7 @@ legend{padding:0;margin-bottom:7px}
         </div>
       </details>
       <div class="mk-cta">
-        <a class="btn" href="#join" id="mk-join">Join the list</a>
+        <div class="mk-cta-row"><a class="btn" href="#join" id="mk-join">Join the list</a><button type="button" class="btn btn-line" id="mk-pic2" hidden>Share a picture</button></div>
         <p class="mk-note">This is a preview, not an order. Names and photos you try here stay on your device. If you join the list, we note only the occasion and colors you tried.</p>
         <p class="mk-note" id="mk-saved" hidden>Your design is kept on this device, so it is still here if the page reloads. <button type="button" class="mk-link" id="mk-reset">Start over</button></p>
       </div>
@@ -752,6 +783,29 @@ legend{padding:0;margin-bottom:7px}
 </div>
 </div>
 
+<dialog class="pic" id="pic" aria-labelledby="pic-title">
+  <div class="pic-head">
+    <h2 id="pic-title">A picture of your post</h2>
+    <button type="button" class="pic-x" id="pic-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="pic-body">
+    <div class="pic-view">
+      <img id="pic-img" alt="" hidden>
+      <p class="pic-wait" id="pic-wait" role="status">Making your picture</p>
+    </div>
+    <div class="pic-side">
+      <div class="pic-shapes" role="group" aria-label="Shape of the picture">
+        <button type="button" class="pic-shape" data-shape="portrait" aria-pressed="true">Standard</button>
+        <button type="button" class="pic-shape" data-shape="story" aria-pressed="false">Tall, for stories</button>
+      </div>
+      <button type="button" class="btn" id="pic-share" hidden>Share</button>
+      <a class="btn btn-line" id="pic-save" hidden>Save the picture</a>
+      <p class="mk-note" id="pic-note" role="status"></p>
+      <p class="mk-note">Made on your device. Nothing is sent to us, and where it goes is up to you.</p>
+    </div>
+  </div>
+</dialog>
+
 <script>
 // Sleeve swap: three tabs, one post.
 (function () {
@@ -810,6 +864,6 @@ legend{padding:0;margin-bottom:7px}
 })();
 </script>
 <script>window.MP_HOLD=['sign'];</script>
-<script type="module" src="customizer.js?v=13"></script>
+<script type="module" src="customizer.js?v=14"></script>
 </body>
 </html>
