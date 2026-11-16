@@ -173,6 +173,10 @@ section[id]{scroll-margin-top:72px}
 .mk-clear[hidden]{display:none}
 .mk-or{margin:6px 0 0;font-size:16px;line-height:1.5;color:var(--ink)}
 .mk-or[hidden]{display:none}
+.mk-back{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:18px 0 4px;padding:14px 18px;border:2px solid var(--ink);background:#fff}
+.mk-back[hidden]{display:none}
+.mk-back p{flex:1 1 240px;margin:0;font:600 17px/1.4 var(--text);color:var(--ink)}
+.mk-note[hidden]{display:none}
 .mk-link{background:none;border:0;padding:10px 0;color:var(--ink);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .mk-note{font-size:14.5px;line-height:1.5;color:var(--muted)}
 .mk-more summary{cursor:pointer;padding:4px 0}
@@ -555,6 +559,7 @@ legend{padding:0;margin-bottom:7px}
       <h2>Try it with<br>your name.</h2>
       <p>Pick the occasion, type a name and choose your colors. The post changes as you go. Then open the design studio to make every face your own.</p>
       <div class="mk-studio" id="mk-studio-row" hidden><button type="button" class="btn btn-studio" id="mk-studio">Open the design studio</button><span>Move anything on a face. Add your own words, photos and artwork.</span></div>
+      <div class="mk-back" id="mk-back" hidden><p id="mk-back-text" role="status">A design is saved on this device.</p><button type="button" class="btn btn-line" id="mk-back-yes">Continue it</button><button type="button" class="mk-link" id="mk-back-no">Start over</button></div>
     </div>
     <div class="make-stage" id="make-stage">
       <canvas id="make-canvas" role="img" aria-label="A preview of your Memory Post. It changes as you change the options."></canvas>
@@ -645,6 +650,7 @@ legend{padding:0;margin-bottom:7px}
       <div class="mk-cta">
         <a class="btn" href="#join" id="mk-join">Join the list</a>
         <p class="mk-note">This is a preview, not an order. Names and photos you try here stay on your device. If you join the list, we note only the occasion and colors you tried.</p>
+        <p class="mk-note" id="mk-saved" hidden>Your design is kept on this device, so it is still here if the page reloads. <button type="button" class="mk-link" id="mk-reset">Start over</button></p>
       </div>
     </div>
   </div>
@@ -804,6 +810,6 @@ legend{padding:0;margin-bottom:7px}
 })();
 </script>
 <script>window.MP_HOLD=['sign'];</script>
-<script type="module" src="customizer.js?v=12"></script>
+<script type="module" src="customizer.js?v=13"></script>
 </body>
 </html>
