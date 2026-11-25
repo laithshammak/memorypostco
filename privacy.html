@@ -5,36 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy notice · Memory Post</title>
 <meta name="description" content="What Memory Post collects when you join the list, how it is used and how to have it removed.">
-<meta name="theme-color" content="#14213D">
+<meta name="theme-color" content="#0A1224">
 <link rel="canonical" href="https://memorypostco.com/privacy.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314213D'/%3E%3Crect x='11' y='4' width='10' height='24' fill='%23fff'/%3E%3Crect x='11' y='13' width='10' height='5' fill='%23F2A900'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14213D;--gold:#F2A900;--paper:#FFFFFF;--body:#2D3748;--muted:#4A5568;--rule:#C9D3E0;
+:root{--night:#0A1224;--deck:#101B33;--ink:#14213D;--gold:#F2A900;--fg:#E9EEF7;--dim:#A9B6CE;--rule:#24335A;--rule-2:#3D4F7A;
   --display:'Barlow Condensed','Arial Narrow','Roboto Condensed',sans-serif;
-  --text:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color-scheme:light}
+  --text:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--body);font:400 17px/1.55 var(--text)}
+html{-webkit-text-size-adjust:100%;background:var(--night)}
+body{margin:0;background:var(--night);color:var(--fg);font:400 17px/1.6 var(--text);-webkit-font-smoothing:antialiased}
 .wrap{width:min(760px,100% - 40px);margin-inline:auto}
-.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
-.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.brand{display:inline-block;padding:6px 0;font:700 22px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-.back{display:inline-block;padding:6px 0;color:var(--ink);font-weight:600;text-underline-offset:4px}
-main{padding:44px 0 64px}
-h1{margin:0;color:var(--ink);font:800 clamp(40px,8vw,60px)/.95 var(--display);letter-spacing:.01em;text-transform:uppercase}
-.bar{width:64px;height:6px;margin:18px 0 22px;background:var(--gold)}
-.date{margin:0 0 30px;color:var(--muted)}
-h2{margin:30px 0 6px;color:var(--ink);font:700 24px/1.1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.top{position:sticky;top:0;z-index:20;background:rgba(10,18,36,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:inline-block;padding:6px 0;font:700 22px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none}
+.back{display:inline-block;padding:6px 0;color:#fff;font-weight:600;text-underline-offset:4px;text-decoration-color:var(--rule-2)}
+.back:hover{text-decoration-color:var(--gold)}
+main{padding:56px 0 84px}
+h1{margin:0;color:#fff;font:700 clamp(46px,8vw,72px)/.95 var(--display);text-wrap:balance}
+.bar{width:64px;height:6px;margin:20px 0 22px;background:var(--gold)}
+.date{margin:0 0 6px;color:var(--dim)}
+h2{margin:34px 0 8px;padding-top:28px;border-top:1px solid var(--rule);color:#fff;font:700 29px/1.1 var(--display)}
 p{margin:0 0 12px}
-main a{color:var(--ink);font-weight:600;text-underline-offset:3px}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.foot{background:var(--ink);color:#AEB9CC;padding:30px 0 40px;font-size:15px}
+main a{color:#fff;font-weight:600;text-underline-offset:3px;text-decoration-color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.foot{color:var(--dim);border-top:1px solid var(--rule);padding:30px 0 42px;font-size:15px}
 .foot p{margin:0 0 8px}
 .foot a{display:inline-block;padding:6px 0;color:#fff;font-weight:600;text-underline-offset:4px}
-.foot a:focus-visible{outline-color:var(--gold)}
 @media (max-width:480px){.brand{font-size:20px;letter-spacing:.12em}}
 </style>
 </head>
